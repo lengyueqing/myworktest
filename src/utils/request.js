@@ -1,25 +1,24 @@
 import axios from 'axios'
 import { MessageBox, Message } from 'element-ui'
 import store from '@/store'
-import { getToken } from '@/utils/auth'
 
-// create an axios instance
+// 添加公共样式和公共请求头
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
   timeout: 5000 // request timeout
 })
 
-// request interceptor
+// 请求拦截器
 service.interceptors.request.use(
   config => {
     // do something before request is sent
-
-    if (store.getters.token) {
+    const token = store.getters.token
+    if (token) {
       // let each request carry token
       // ['X-Token'] is a custom headers key
       // please modify it according to the actual situation
-      config.headers['X-Token'] = getToken()
+      config.headers['token'] = token
     }
     return config
   },
@@ -30,7 +29,7 @@ service.interceptors.request.use(
   }
 )
 
-// response interceptor
+// 响应拦截器
 service.interceptors.response.use(
   /**
    * If you want to get http information such as headers or status

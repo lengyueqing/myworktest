@@ -141,6 +141,8 @@ $cursor: #fff;
 
 /* reset element-ui css */
 .login-container {
+  background-image: url(~@/assets/zangai.jpg);
+  background-size: cover;
   .el-input {
     display: inline-block;
     height: 47px;

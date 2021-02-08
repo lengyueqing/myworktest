@@ -5,6 +5,7 @@
     <breadcrumb class="breadcrumb-container" />
 
     <div class="right-menu">
+      <div class="right-menu-item">{{ name }}</div>
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
@@ -44,7 +45,8 @@ export default {
   computed: {
     ...mapGetters([
       'sidebar',
-      'avatar'
+      'avatar',
+      'name'
     ])
   },
   methods: {
