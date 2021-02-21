@@ -46,7 +46,7 @@ module.exports = {
     'constructor-super': 2,
     'curly': [2, 'multi-line'],
     'dot-location': [2, 'property'],
-    'eol-last': 2,
+    'eol-last': 0,
     'eqeqeq': ["error", "always", {"null": "ignore"}],
     'generator-star-spacing': [2, {
       'before': true,
@@ -126,7 +126,7 @@ module.exports = {
     'no-return-assign': [2, 'except-parens'],
     'no-self-assign': 2,
     'no-self-compare': 2,
-    'no-sequences': 2,
+    'no-sequences': 0,
     'no-shadow-restricted-names': 2,
     'no-spaced-func': 2,
     'no-sparse-arrays': 2,
