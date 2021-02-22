@@ -16,6 +16,8 @@ import '@/icons' // icon
 import '@/permission' // permission control
 // 引入API接口
 import * as API from '@/api'
+//引入categorySelector
+import CategorySelector from '@/views/product/categorySelector/CategorySelector'
 
 /**
  * If you don't want to use mock-server
@@ -26,8 +28,8 @@ import * as API from '@/api'
  * please remove it before going online ! ! !
  */
 if (process.env.NODE_ENV === 'production') {
-  const { mockXHR } = require('../mock')
-  mockXHR()
+	const { mockXHR } = require('../mock')
+	mockXHR()
 }
 
 // set ElementUI lang to EN
@@ -37,9 +39,10 @@ Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 Vue.prototype.$API = API
+Vue.component('CategorySelector', CategorySelector)
 new Vue({
-  el: '#app',
-  router,
-  store,
-  render: h => h(App)
+	el: '#app',
+	router,
+	store,
+	render: (h) => h(App)
 })

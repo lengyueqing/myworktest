@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'CategoryList'
+  name: 'CategoryList',
 }
 </script>
 <style></style>
