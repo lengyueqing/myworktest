@@ -19,10 +19,11 @@ export default {
   },
   //添加或者修改平台属性值
   addOrUpdate(attrInfo) {
-    return request({
+    return request.post(`${api_name}/saveAttrInfo`, attrInfo);
+    /*   return request({
       url: `${api_name}/saveAttrInfo/${attrInfo}`,
       method: "post"
-    });
+    }); */
   },
   //根据某个平台实现的的ID获取里面所有的该平台属性值
   getAttrValueList(attrId) {
